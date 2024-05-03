@@ -1,0 +1,53 @@
+please run main.py to start the program.
+
+
+/Desctiption/
+This code implements a genetic algorithm for solving backpack problem in CS131 homwork3.
+The goal of the algorithm is to find the optimal solution that
+maximizes the total value while keeping the total weight below 250
+
+
+
+/Modify the parameters in the code according to your problem.
+The main parameters you may want to adjust are:/
+
+population_size: The size of the initial population.
+gene: The list of genes representing the problem.
+max_weight: The maximum weight allowed for a solution.
+tournament_size: The number of individuals participating in each tournament selection.
+crossover_rate: The probability of crossover occurring between two parents.
+mutation_rate: The probability of mutation occurring in a child.
+Run the code by executing python main.py.
+This will start the genetic algorithm and print the final population along with a fitness graph.
+
+
+/Functionality/
+The code consists of several functions:
+
+generate_population(population_size, gene): Generates an initial population with random genotypes.
+
+calculate_fitness(genotype, gene, max_weight): Calculates the fitness of a genotype based on the total weight and value.
+
+tournament(population, gene, max_weight, tournament_size, population_size): Performs tournament selection to
+select parents from the top 50% of the population.
+
+crossover(parent1, parent2, crossover_rate): Performs crossover between two parents to generate children.
+
+mutation(child, mutation_rate): Performs mutation on a child by flipping a random gene.
+
+
+/About the algorithm/
+The algorithm will generate a initial population first, and calculate fitness value.
+and then keep top 50% of the population for selection, I used tournament selection here.
+In the tournament selection, it will generate a parents list, we random choose 2 parents to crossover
+and to mutate to get children. the process will keep looping until we get enough children that reach the population size.
+Once we get enough size of children, we consider as a generation.  replace the initial population with generation.
+The process will keep continue it reach 100 generation ( i set up 100 generation, if you want to create 500 generation
+you can modify parameter). The algorithm provide a fitness graph for each generation.
+Actually when we see the fitness value of genotype in each generation is getting more average
+and stable and we seeing more same highest fitness value in a generation. we can consider to stop the algorithm.
+
+
+
+
+
